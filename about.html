@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About — Ecosoap</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header" id="header">
+    <div class="container">
+        <div class="header__inner">
+            <div class="header__logo"><a href="index.html">ecosoap</a></div>
+            <nav class="header__nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="product.html">Product</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li class="has-dropdown active">
+                        <a href="about.html">Pages <i class="fas fa-chevron-down nav-arrow"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="about.html" style="color:#fff !important;">About</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="faq.html">FAQ</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header__actions">
+                <button class="btn-icon"><i class="fas fa-search"></i></button>
+                <button class="btn-icon"><i class="fas fa-user"></i></button>
+                <button class="btn-icon cart-btn" id="cartToggle"><i class="fas fa-shopping-bag"></i><span class="cart-count">0</span></button>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenu"><i class="fas fa-bars"></i></button>
+        </div>
+    </div>
+</header>
+
+<section class="page-hero">
+    <div class="container">
+        <h1>About Us</h1>
+        <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span style="color:rgba(255,255,255,0.8)">About</span></div>
+    </div>
+</section>
+
+<!-- INTRO -->
+<section style="background:var(--cream);">
+    <div class="container">
+        <div class="about-section__inner">
+            <div class="about-section__images">
+                <img src="images/about/ins-01.jpg" alt="" class="about-img about-img--top">
+                <img src="images/about/ins-03.jpg" alt="" class="about-img about-img--bottom">
+            </div>
+            <div class="about-section__content">
+                <p class="section-label">WHO WE ARE</p>
+                <h2>Handcrafted with certified organic ingredients</h2>
+                <p>Our diverse range of natural soaps are made using the finest, pure ingredients, including only pure essential oils to create our uplifting, nurturing scents. Our natural soaps and all-natural skincare products gently work in harmony with your skin, healing them perfect for all skin types and ages.</p>
+                <p style="margin-top:12px;margin-bottom:28px;">Founded in 2018, Ecosoap started as a small batch soap-making kitchen project and grew into a beloved brand trusted by thousands of customers worldwide. Every bar is handmade with love and care.</p>
+                <a href="shop.html" class="btn btn--red">SHOP NOW</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- VALUES -->
+<section style="background:var(--beige);">
+    <div class="container">
+        <p class="section-label text-center">OUR COMMITMENT</p>
+        <h2 class="section-title text-center">What We Stand For</h2>
+        <div class="values-grid">
+            <div class="value-card"><i class="fas fa-leaf"></i><h4>100% Vegan</h4><p>All our products are entirely plant-based. We never use animal-derived ingredients and are certified by The Vegan Society.</p></div>
+            <div class="value-card"><i class="fas fa-heart"></i><h4>Cruelty Free</h4><p>We never test on animals. Our products are certified cruelty-free and we partner only with suppliers who share our ethics.</p></div>
+            <div class="value-card"><i class="fas fa-seedling"></i><h4>Natural Ingredients</h4><p>We use only the finest natural, sustainably sourced ingredients — from organic oils to botanicals harvested with care.</p></div>
+            <div class="value-card"><i class="fas fa-circle-nodes"></i><h4>Non GMO</h4><p>All plant-based ingredients we use are non-genetically modified. Pure, as nature intended — every single time.</p></div>
+            <div class="value-card"><i class="fas fa-certificate"></i><h4>Certified Organic</h4><p>Our core ingredients carry organic certification. We believe what goes on your body matters as much as what goes in it.</p></div>
+            <div class="value-card"><i class="fas fa-recycle"></i><h4>Eco Packaging</h4><p>Our packaging is 100% recyclable and we are working toward plastic-free shipping across our entire product range.</p></div>
+        </div>
+    </div>
+</section>
+
+<!-- BADGES STRIP -->
+<section class="badges-strip">
+    <div class="container">
+        <div class="badges-strip__inner">
+            <div class="badge-item"><span class="badge-icon"><i class="fas fa-leaf"></i></span><span>100% Vegan</span></div>
+            <div class="badge-item"><span class="badge-icon"><i class="fas fa-heart"></i></span><span>Cruelty Free</span></div>
+            <div class="badge-item"><span class="badge-icon"><i class="fas fa-seedling"></i></span><span>Natural Ingredients</span></div>
+            <div class="badge-item"><span class="badge-icon"><i class="fas fa-circle-nodes"></i></span><span>Non GMO</span></div>
+            <div class="badge-item"><span class="badge-icon"><i class="fas fa-certificate"></i></span><span>Organic</span></div>
+        </div>
+    </div>
+</section>
+
+<!-- TEAM -->
+<section style="background:var(--cream);">
+    <div class="container">
+        <p class="section-label text-center">THE PEOPLE BEHIND THE SOAP</p>
+        <h2 class="section-title text-center">Meet Our Team</h2>
+        <div class="team-grid">
+            <div class="team-card">
+                <div class="team-card__img"><img src="images/about/team1.jpg" alt="Eliot Stone"></div>
+                <h4>Eliot Stone</h4><p>Founder &amp; CEO</p>
+            </div>
+            <div class="team-card">
+                <div class="team-card__img"><img src="images/about/team2.jpg" alt="Aston Doe"></div>
+                <h4>Aston Doe</h4><p>Head of Design</p>
+            </div>
+            <div class="team-card">
+                <div class="team-card__img"><img src="images/about/team3.jpg" alt="Camelia Doe"></div>
+                <h4>Camelia Doe</h4><p>Customer Support</p>
+            </div>
+            <div class="team-card">
+                <div class="team-card__img"><img src="images/about/team4.jpg" alt="Jane Stark"></div>
+                <h4>Jane Stark</h4><p>Marketing Director</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+    <div class="container">
+        <p class="section-label text-center">TESTIMONIALS</p>
+        <h2 class="section-title text-center">What Our Customers Are Saying</h2>
+        <div class="testimonials__grid">
+            <div class="testimonial-card">
+                <div class="testimonial-card__avatar"><img src="images/about/img-tes-01.jpg" alt="Martha Griffin"></div>
+                <div class="stars">★★★★★</div>
+                <p>"These soaps are wonderful for sensitive skin. My eczema-prone skin has improved remarkably. The scents are divine and the ingredients so pure."</p>
+                <strong>Martha Griffin</strong><span>Designer</span>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-card__avatar"><img src="images/about/img-tes-02.jpg" alt="Bruce Jones"></div>
+                <div class="stars">★★★★★</div>
+                <p>"I've never used soaps that feel this soft and luxurious. The variety of scents is amazing — I have about 6 different ones in rotation!"</p>
+                <strong>Bruce Jones</strong><span>Web Developer</span>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-card__avatar"><img src="images/about/img-tes-03.jpg" alt="Deanna Rose"></div>
+                <div class="stars">★★★★★</div>
+                <p>"Perfect for dry skin! The moisturizing properties are unmatched and the scents last all day. I've switched completely from commercial soaps."</p>
+                <strong>Deanna Rose</strong><span>Consultant</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services">
+    <div class="container">
+        <div class="services__grid">
+            <div class="service-item"><i class="fas fa-award service-icon"></i><div><h4>Quality Products</h4><p>Every bar is made in small batches and quality-checked before it leaves our workshop.</p></div></div>
+            <div class="service-item"><i class="fas fa-rotate-left service-icon"></i><div><h4>30 Days Return</h4><p>Not satisfied? Return within 30 days, free of charge, no questions asked.</p></div></div>
+            <div class="service-item"><i class="fas fa-truck service-icon"></i><div><h4>Free Delivery</h4><p>Spend $30 or more and enjoy free delivery straight to your door.</p></div></div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer__main">
+            <div class="footer__brand"><div class="footer__logo">ecosoap</div><p>42 Puffin Street, 1345 Puffinville, France</p><p>Mon – Sat: 8:00am – 4:00pm</p></div>
+            <div class="footer__col"><h4>About Us</h4><ul><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><a href="#">Return Policy</a></li></ul></div>
+            <div class="footer__col"><h4>Service</h4><ul><li><a href="faq.html">FAQs</a></li><li><a href="#">Order Tracking</a></li><li><a href="#">Delivery Information</a></li></ul></div>
+            <div class="footer__col"><h4>Information</h4><ul><li><a href="#">Shipping &amp; Returns</a></li><li><a href="#">Secure Shopping</a></li><li><a href="#">Terms &amp; Conditions</a></li></ul></div>
+            <div class="footer__col"><h4>Need Help?</h4><p class="footer__contact"><i class="fas fa-phone"></i> (1800)-88-66-999</p><p class="footer__contact"><i class="fas fa-envelope"></i> support@example.com</p><div class="footer__social"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-twitter"></i></a></div></div>
+        </div>
+        <div class="footer__bottom"><p>Copyright &copy; 2026 Ecosoap – All Rights Reserved</p><div class="payment-icons"><span>VISA</span><span>MC</span><span>PayPal</span></div></div>
+    </div>
+</footer>
+
+<div class="cart-sidebar" id="cartSidebar"><div class="cart-sidebar__header"><h3>Shopping Cart</h3><button id="cartClose"><i class="fas fa-times"></i></button></div><div class="cart-sidebar__body" id="cartBody"><p class="cart-empty">Your cart is currently empty.</p></div><div class="cart-sidebar__footer"><div class="cart-total">Total: <strong id="cartTotal">$0.00</strong></div><a href="#" class="btn btn--green btn--full">Checkout</a></div></div>
+<div class="cart-overlay" id="cartOverlay"></div>
+<div class="toast" id="toast"></div>
+<button class="scroll-top" id="scrollTop"><i class="fas fa-chevron-up"></i></button>
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+<script src="script.js"></script>
+</body>
+</html>

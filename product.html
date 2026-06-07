@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activated Charcoal Handmade Soap — Ecosoap</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header" id="header">
+    <div class="container">
+        <div class="header__inner">
+            <div class="header__logo"><a href="index.html">ecosoap</a></div>
+            <nav class="header__nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li class="active"><a href="product.html">Product</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li class="has-dropdown">
+                        <a href="about.html">Pages <i class="fas fa-chevron-down nav-arrow"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="faq.html">FAQ</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header__actions">
+                <button class="btn-icon"><i class="fas fa-search"></i></button>
+                <button class="btn-icon"><i class="fas fa-user"></i></button>
+                <button class="btn-icon cart-btn" id="cartToggle"><i class="fas fa-shopping-bag"></i><span class="cart-count">0</span></button>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenu"><i class="fas fa-bars"></i></button>
+        </div>
+    </div>
+</header>
+
+<section class="page-hero">
+    <div class="container">
+        <h1>Product Detail</h1>
+        <div class="breadcrumb">
+            <a href="index.html">Home</a><span>/</span>
+            <a href="shop.html">Shop</a><span>/</span>
+            <span style="color:rgba(255,255,255,0.8)">Activated Charcoal Soap</span>
+        </div>
+    </div>
+</section>
+
+<section style="background:var(--cream); padding:70px 0;">
+    <div class="container">
+        <div class="product-detail">
+            <!-- GALLERY -->
+            <div>
+                <div class="product-gallery__main">
+                    <img src="images/products/p-01-600x600.jpg" alt="Activated Charcoal Soap" id="mainImg">
+                </div>
+                <div class="product-gallery__thumbs">
+                    <img src="images/products/p-01-600x600.jpg" alt="" class="active" onclick="switchImg(this)">
+                    <img src="images/products/p-01-2-600x600.jpg" alt="" onclick="switchImg(this)">
+                    <img src="images/products/p-02-600x600.jpg" alt="" onclick="switchImg(this)">
+                    <img src="images/products/p-03-600x600.jpg" alt="" onclick="switchImg(this)">
+                </div>
+            </div>
+
+            <!-- INFO -->
+            <div class="product-info">
+                <div class="product-info__rating">
+                    <span class="stars">★★★★☆</span>
+                    <small>(24 reviews)</small>
+                </div>
+                <h1>Activated Charcoal Handmade Soap</h1>
+                <div class="product-info__price">$125.40</div>
+                <p style="font-size:13px;color:var(--muted);line-height:1.85;margin-bottom:18px;">
+                    Our Activated Charcoal soap is deeply cleansing and detoxifying. Made with pure activated charcoal powder sourced from coconut shells, it draws out impurities, excess oils, and toxins from your pores — leaving skin refreshed, smooth, and balanced.
+                </p>
+                <div class="product-info__meta">
+                    <strong>SKU:</strong> A0017<br>
+                    <strong>Categories:</strong> Anti-Aging Soaps, Scrubby Soaps<br>
+                    <strong>Tags:</strong> Charcoal, Detox, Organic<br>
+                    <strong>Availability:</strong> <span style="color:var(--green-med);">In stock (47 units)</span>
+                </div>
+
+                <div class="product-qty">
+                    <button class="qty-btn" onclick="changeQty(-1)">−</button>
+                    <input type="number" class="qty-input" value="1" min="1" id="qtyInput">
+                    <button class="qty-btn" onclick="changeQty(1)">+</button>
+                </div>
+
+                <div class="product-actions">
+                    <button class="btn btn--green" onclick="addProductToCart()">
+                        <i class="fas fa-shopping-bag" style="margin-right:8px;"></i>Add to Cart
+                    </button>
+                    <button class="btn btn--outline"><i class="fas fa-heart" style="margin-right:6px;"></i>Wishlist</button>
+                    <button class="btn btn--outline"><i class="fas fa-arrows-left-right" style="margin-right:6px;"></i>Compare</button>
+                </div>
+
+                <div style="padding-top:16px;border-top:1px solid var(--border);font-size:12px;color:var(--muted);">
+                    <span style="margin-right:16px;"><i class="fas fa-share-nodes" style="margin-right:6px;"></i>Share:</span>
+                    <a href="#" style="margin-right:10px;color:var(--muted);"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" style="margin-right:10px;color:var(--muted);"><i class="fab fa-twitter"></i></a>
+                    <a href="#" style="margin-right:10px;color:var(--muted);"><i class="fab fa-pinterest-p"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- TABS -->
+        <div style="margin-top:60px;">
+            <div class="product-tabs-nav">
+                <button class="product-tab-btn active" data-tab="desc">Description</button>
+                <button class="product-tab-btn" data-tab="ingr">Ingredients</button>
+                <button class="product-tab-btn" data-tab="info">Additional Info</button>
+                <button class="product-tab-btn" data-tab="reviews">Reviews (24)</button>
+            </div>
+            <div class="product-tab-pane active" data-tab-pane="desc">
+                <p>Our Activated Charcoal Handmade Soap is crafted in small batches using the cold-process method to preserve the integrity of all natural ingredients. Activated charcoal is a powerful natural ingredient known for its ability to attract and trap toxins from the skin's surface.</p>
+                <p style="margin-top:12px;">This bar is ideal for oily, acne-prone, or combination skin types. It provides a deep clean without stripping the skin of its natural moisture barrier. Each bar is hand-cut and slightly varies in weight and appearance — a natural characteristic of handmade soaps.</p>
+            </div>
+            <div class="product-tab-pane" data-tab-pane="ingr">
+                <p><strong>Natural Ingredients:</strong></p>
+                <ul class="ingredients-list">
+                    <li>Coconut Oil (Cocos nucifera)</li>
+                    <li>Canola Oil (Brassica napus)</li>
+                    <li>Soybean Oil (Glycine soja)</li>
+                    <li>Olive Pomace Oil (Olea europaea)</li>
+                    <li>Sunflower Oil (Helianthus annuus)</li>
+                    <li>Organic Shea Butter (Butyrospermum parkii)</li>
+                    <li>Water (Aqua)</li>
+                    <li>Sodium Hydroxide (Lye)</li>
+                    <li>Activated Charcoal (Carbo activatus)</li>
+                </ul>
+                <p style="margin-top:16px;"><strong>Synthetic Ingredients:</strong></p>
+                <ul class="ingredients-list">
+                    <li>Fragrance (Parfum)</li>
+                    <li>Colorant</li>
+                </ul>
+            </div>
+            <div class="product-tab-pane" data-tab-pane="info">
+                <p><strong>Weight:</strong> 100g (3.5 oz)<br>
+                <strong>Dimensions:</strong> 9 × 6 × 3 cm<br>
+                <strong>Net weight:</strong> 100 g<br>
+                <strong>Shelf life:</strong> 24 months<br>
+                <strong>Country of origin:</strong> France</p>
+            </div>
+            <div class="product-tab-pane" data-tab-pane="reviews">
+                <div class="review-item">
+                    <div class="stars">★★★★★</div>
+                    <strong>Martha Griffin</strong> <small>— March 12, 2024</small>
+                    <p style="margin-top:6px;">This soap is absolutely amazing! My skin feels so clean and refreshed after every use. The charcoal really does draw out impurities — I've noticed a visible difference in my pores within two weeks of use.</p>
+                </div>
+                <div class="review-item">
+                    <div class="stars">★★★★☆</div>
+                    <strong>Bruce Jones</strong> <small>— February 28, 2024</small>
+                    <p style="margin-top:6px;">Great soap for oily skin. Lathers up really nicely and leaves a clean, fresh feeling without drying my skin out. Would definitely recommend.</p>
+                </div>
+                <div class="review-item">
+                    <div class="stars">★★★★★</div>
+                    <strong>Deanna Rose</strong> <small>— January 15, 2024</small>
+                    <p style="margin-top:6px;">I was skeptical about charcoal soap but this converted me completely. My skin looks clearer and more balanced. Love the light scent too.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- RELATED PRODUCTS -->
+        <div style="margin-top:70px;">
+            <p class="section-label">YOU MAY ALSO LIKE</p>
+            <h2 class="section-title">Related Products</h2>
+            <div class="products-row">
+                <div class="product-card" data-name="Lavender Patchouli Soap" data-price="82.89" data-img="images/products/p-08-600x600.jpg">
+                    <div class="product-card__img"><img src="images/products/p-08-600x600.jpg" alt=""><div class="product-card__overlay"><button class="btn-add-cart">Add to Cart</button></div></div>
+                    <div class="product-card__info"><h4>Lavender Patchouli Handmade Soap</h4><div class="stars">★★★★★</div><p class="product-price">$82.89</p></div>
+                </div>
+                <div class="product-card" data-name="Dead Sea Mud Soap" data-price="35.00" data-img="images/products/p-06-600x600.jpg">
+                    <div class="product-card__img"><img src="images/products/p-06-600x600.jpg" alt=""><div class="product-card__overlay"><button class="btn-add-cart">Add to Cart</button></div><span class="p-badge p-badge--sale">-24%</span></div>
+                    <div class="product-card__info"><h4>Dead Sea Mud Handmade Soap</h4><p class="product-price">$35.00 <s class="old-price">$46.00</s></p></div>
+                </div>
+                <div class="product-card" data-name="Tea Tree Handmade Soap" data-price="143.80" data-img="images/products/p-17-600x600.jpg">
+                    <div class="product-card__img"><img src="images/products/p-17-600x600.jpg" alt=""><div class="product-card__overlay"><button class="btn-add-cart">Add to Cart</button></div></div>
+                    <div class="product-card__info"><h4>Tea Tree Handmade Soap</h4><div class="stars">★★★☆☆</div><p class="product-price">$143.80</p></div>
+                </div>
+                <div class="product-card" data-name="Galactic Gobi Handmade Soap" data-price="65.00" data-img="images/products/p-07-600x600.jpg">
+                    <div class="product-card__img"><img src="images/products/p-07-600x600.jpg" alt=""><div class="product-card__overlay"><button class="btn-add-cart">Add to Cart</button></div></div>
+                    <div class="product-card__info"><h4>Galactic Gobi Handmade Soap</h4><div class="stars">★★★★★</div><p class="product-price">$65.00</p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer__main">
+            <div class="footer__brand"><div class="footer__logo">ecosoap</div><p>42 Puffin Street, 1345 Puffinville, France</p></div>
+            <div class="footer__col"><h4>About Us</h4><ul><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><a href="#">Return Policy</a></li></ul></div>
+            <div class="footer__col"><h4>Service</h4><ul><li><a href="faq.html">FAQs</a></li><li><a href="#">Order Tracking</a></li><li><a href="#">Delivery Information</a></li></ul></div>
+            <div class="footer__col"><h4>Information</h4><ul><li><a href="#">Shipping &amp; Returns</a></li><li><a href="#">Secure Shopping</a></li><li><a href="#">Terms &amp; Conditions</a></li></ul></div>
+            <div class="footer__col"><h4>Need Help?</h4><p class="footer__contact"><i class="fas fa-phone"></i> (1800)-88-66-999</p><p class="footer__contact"><i class="fas fa-envelope"></i> support@example.com</p><div class="footer__social"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-instagram"></i></a></div></div>
+        </div>
+        <div class="footer__bottom"><p>Copyright &copy; 2026 Ecosoap – All Rights Reserved</p><div class="payment-icons"><span>VISA</span><span>MC</span><span>PayPal</span></div></div>
+    </div>
+</footer>
+
+<div class="cart-sidebar" id="cartSidebar"><div class="cart-sidebar__header"><h3>Shopping Cart</h3><button id="cartClose"><i class="fas fa-times"></i></button></div><div class="cart-sidebar__body" id="cartBody"><p class="cart-empty">Your cart is currently empty.</p></div><div class="cart-sidebar__footer"><div class="cart-total">Total: <strong id="cartTotal">$0.00</strong></div><a href="#" class="btn btn--green btn--full">Checkout</a></div></div>
+<div class="cart-overlay" id="cartOverlay"></div>
+<div class="toast" id="toast"></div>
+<button class="scroll-top" id="scrollTop"><i class="fas fa-chevron-up"></i></button>
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<script src="script.js"></script>
+<script>
+function switchImg(el) {
+    document.getElementById('mainImg').src = el.src;
+    document.querySelectorAll('.product-gallery__thumbs img').forEach(i => i.classList.remove('active'));
+    el.classList.add('active');
+}
+function changeQty(delta) {
+    const input = document.getElementById('qtyInput');
+    input.value = Math.max(1, parseInt(input.value) + delta);
+}
+function addProductToCart() {
+    const qty = parseInt(document.getElementById('qtyInput').value);
+    for (let i = 0; i < qty; i++) {
+        const evt = new MouseEvent('click', { bubbles: true });
+        document.querySelector('.btn-add-cart') && document.querySelector('.btn-add-cart').dispatchEvent(evt);
+    }
+}
+document.querySelectorAll('.product-tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        document.querySelectorAll('.product-tab-btn').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.product-tab-pane').forEach(p => p.classList.remove('active'));
+        btn.classList.add('active');
+        document.querySelector(`[data-tab-pane="${btn.dataset.tab}"]`).classList.add('active');
+    });
+});
+</script>
+</body>
+</html>

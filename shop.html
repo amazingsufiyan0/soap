@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop — Ecosoap</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header" id="header">
+    <div class="container">
+        <div class="header__inner">
+            <div class="header__logo"><a href="index.html">ecosoap</a></div>
+            <nav class="header__nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li class="active"><a href="shop.html">Shop</a></li>
+                    <li><a href="product.html">Product</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li class="has-dropdown">
+                        <a href="about.html">Pages <i class="fas fa-chevron-down nav-arrow"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="faq.html">FAQ</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header__actions">
+                <button class="btn-icon"><i class="fas fa-search"></i></button>
+                <button class="btn-icon"><i class="fas fa-user"></i></button>
+                <button class="btn-icon cart-btn" id="cartToggle">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count">0</span>
+                </button>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenu"><i class="fas fa-bars"></i></button>
+        </div>
+    </div>
+</header>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+    <div class="container">
+        <h1>Our Shop</h1>
+        <div class="breadcrumb">
+            <a href="index.html">Home</a>
+            <span>/</span>
+            <span style="color:rgba(255,255,255,0.8)">Shop</span>
+        </div>
+    </div>
+</section>
+
+<!-- SHOP -->
+<section style="background:var(--cream); padding:60px 0;">
+    <div class="container">
+        <div class="shop-layout">
+
+            <!-- SIDEBAR -->
+            <aside class="shop-sidebar">
+                <div class="sidebar-section">
+                    <p class="sidebar-title">Product Categories</p>
+                    <ul class="sidebar-cats">
+                        <li><a href="#">All Products <span>17</span></a></li>
+                        <li><a href="#">Anti-Aging Soaps <span>10</span></a></li>
+                        <li><a href="#">Floral Soaps <span>2</span></a></li>
+                        <li><a href="#">Herbal Soaps <span>1</span></a></li>
+                        <li><a href="#">Liquid Soaps <span>3</span></a></li>
+                        <li><a href="#">Organic Soaps <span>8</span></a></li>
+                        <li><a href="#">Scrubby Soaps <span>10</span></a></li>
+                        <li><a href="#">Tea Tree Soaps <span>4</span></a></li>
+                    </ul>
+                </div>
+                <div class="sidebar-section">
+                    <p class="sidebar-title">Price Range</p>
+                    <div class="price-range">
+                        <input type="range" min="0" max="200" value="200" id="priceRange">
+                        <div class="range-labels">
+                            <span>$0</span>
+                            <span id="priceVal">$200</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="sidebar-section">
+                    <p class="sidebar-title">Color</p>
+                    <div class="color-swatches">
+                        <div class="color-swatch" style="background:#c4956a" title="Camel"></div>
+                        <div class="color-swatch" style="background:#e07c3a" title="Orange"></div>
+                        <div class="color-swatch" style="background:#e4a0b0" title="Pink"></div>
+                        <div class="color-swatch" style="background:#8c6bbf" title="Purple"></div>
+                        <div class="color-swatch" style="background:#3d6b56" title="Green"></div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- MAIN GRID -->
+            <div>
+                <div class="shop-toolbar">
+                    <p>Showing <strong>17</strong> results</p>
+                    <div style="display:flex;align-items:center;gap:12px;">
+                        <select class="sort-select">
+                            <option>Sort by: Popularity</option>
+                            <option>Sort by: Rating</option>
+                            <option>Sort by: Newest</option>
+                            <option>Price: Low to High</option>
+                            <option>Price: High to Low</option>
+                        </select>
+                        <div class="view-toggle">
+                            <button class="view-btn active"><i class="fas fa-th"></i></button>
+                            <button class="view-btn"><i class="fas fa-list"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="products-row" style="grid-template-columns:repeat(3,1fr);">
+                    <div class="product-card" data-name="Activated Charcoal Handmade Soap" data-price="125.40" data-img="images/products/p-01-600x600.jpg">
+                        <div class="product-card__img">
+                            <img src="images/products/p-01-600x600.jpg" alt="Activated Charcoal Soap">
+                            <div class="product-card__overlay"><button class="btn-add-cart">Add to Cart</button></div>
+                            <span class="p-badge p-badge--new">NEW</span>
+                        </div>
+                        <div class="product-card__info">
+                            <h4>Activated Charcoal Handmade Soap</h4>
+                            <div class="stars">★★★★☆</div>
+                            <p class="product-price">$125.40</p>
+                        </div>
+                    </div>
+                    <div class="product-card" data-name="Apple Handcrafted Soap" data-price="145.00" data-img="images/products/p-02-600x600.jpg">
+                        <div class="product-card__img">
+                            <img src="images/products/p-02-600x600.jpg" alt="Apple Handcrafted Soap">
+                            <div class="product-card__overlay"><button class="btn-add-cart">Add to Cart</button></div>
+                        </div>
+                        <div class="product-card__info">
+                            <h4>Apple Handcrafted Soap</h4>
+                            <p class="product-price">$145.00</p>
+                        </div>
+                    </div>
+                    <div class="product-card" data-name="Chamomile Handmade Soap" data-price="142.05" data-img="images/products/p-03-600x600.jpg">
+                        <div class="product-card__img">
+                            <img src="images/products/p-03-600x600.jpg" alt="Chamomile Handmade Soap">
+                            <div class="product-card__overlay"><button class="btn-add-cart">Add to Cart</button></div>
+                        </div>
+                        <div class="product-card__info">
+                            <h4>Chamomile Handmade Soap</h4>
+                            <p class="product-price">$142.05</p>
+                        </div>
+                    </div>
+                    <div class="product-card" data-name="Coconut Almond Handmade Soap" data-price="45.60" data-img="images/products/p-04-600x600.jpg">
+                        <div class="product-card__img">
+                            <img src="images/products/p-04-600x600.jpg" alt="Coconut Almond Soap">
+                            <div class="product-card__overlay"><button class="btn-add-cart">Add to Cart</button></div>
+                        </div>
+                        <div class="product-card__info">
+                            <h4>Coconut Almond Handmade Soap</h4>
+                            <p class="product-price">$45.60</p>
+                        </div>
+                    </div>
+                    <div class="product-card" data-name="Cotton Fields Handmade Soap" data-price="86.89" data-img="images/products/p-05-600x600.jpg">
+                        <div class="product-card__img">
+                            <img src="images/products/p-05-600x600.jpg" alt="Cotton Fields Soap">
+                            <div class="product-card__overlay"><button class="btn-add-cart">Add to Cart</button></div>
+                            <span class="p-badge p-badge--sold">SOLD OUT</span>
+                        </div>
+                        <div class="product-card__info">
+                            <h4>Cotton Fields Handmade Soap</h4>
+                            <div class="stars">★★★★★</div>
+                            <p class="product-price sold-out">$86.89</p>
+                        </div>
+                    </div>
+                    <div class="product-card" data-name="Dead Sea Mud Handmade Soap" data-price="35.00" data-img="images/products/p-06-600x600.jpg">
+                        <div class="product-card__img">
+                            <img src="images/products/p-06-600x600.jpg" alt="Dead Sea Mud Soap">
+                            <div class="product-card__overlay"><button class="btn-add-cart">Add to Cart</button></div>
+                            <span class="p-badge p-badge--sale">-24%</span>
+                        </div>
+                        <div class="product-card__info">
+                            <h4>Dead Sea Mud Handmade Soap</h4>
+                            <p class="product-price">$35.00 <s class="old-price">$46.00</s></p>
+                        </div>
+                    </div>
+                    <div class="product-card" data-name="Galactic Gobi Handmade Soap" data-price="65.00" data-img="images/products/p-07-600x600.jpg">
+                        <div class="product-card__img">
+                            <img src="images/products/p-07-600x600.jpg" alt="Galactic Gobi Soap">
+                            <div class="product-card__overlay"><button class="btn-add-cart">Add to Cart</button></div>
+                        </div>
+                        <div class="product-card__info">
+                            <h4>Galactic Gobi Handmade Soap</h4>
+                            <div class="stars">★★★★★</div>
+                            <p class="product-price">$65.00</p>
+                        </div>
+                    </div>
+                    <div class="product-card" data-name="Lavender Patchouli Handmade Soap" data-price="82.89" data-img="images/products/p-08-600x600.jpg">
+                        <div class="product-card__img">
+                            <img src="images/products/p-08-600x600.jpg" alt="Lavender Patchouli Soap">
+                            <div class="product-card__overlay"><button class="btn-add-cart">Add to Cart</button></div>
+                        </div>
+                        <div class="product-card__info">
+                            <h4>Lavender Patchouli Handmade Soap</h4>
+                            <p class="product-price">$82.89</p>
+                        </div>
+                    </div>
+                    <div class="product-card" data-name="Lightning Handcrafted Soap" data-price="23.05" data-img="images/products/p-09-600x600.jpg">
+                        <div class="product-card__img">
+                            <img src="images/products/p-09-600x600.jpg" alt="Lightning Handcrafted Soap">
+                            <div class="product-card__overlay"><button class="btn-add-cart">Add to Cart</button></div>
+                        </div>
+                        <div class="product-card__info">
+                            <h4>Lightning Handcrafted Soap</h4>
+                            <p class="product-price">$23.05</p>
+                        </div>
+                    </div>
+                    <div class="product-card" data-name="Raspberry Mint Handmade Soap" data-price="73.40" data-img="images/products/p-12-600x600.jpg">
+                        <div class="product-card__img">
+                            <img src="images/products/p-12-600x600.jpg" alt="Raspberry Mint Soap">
+                            <div class="product-card__overlay"><button class="btn-add-cart">Add to Cart</button></div>
+                        </div>
+                        <div class="product-card__info">
+                            <h4>Raspberry Mint Handmade Soap</h4>
+                            <div class="stars">★★★★★</div>
+                            <p class="product-price">$73.40</p>
+                        </div>
+                    </div>
+                    <div class="product-card" data-name="Rose Bouquet Handmade Soap" data-price="45.20" data-img="images/products/p-14-2-600x600.jpg">
+                        <div class="product-card__img">
+                            <img src="images/products/p-14-2-600x600.jpg" alt="Rose Bouquet Soap">
+                            <div class="product-card__overlay"><button class="btn-add-cart">Add to Cart</button></div>
+                        </div>
+                        <div class="product-card__info">
+                            <h4>Rose Bouquet Handmade Soap</h4>
+                            <div class="stars">★★★★☆</div>
+                            <p class="product-price">$45.20</p>
+                        </div>
+                    </div>
+                    <div class="product-card" data-name="Spearmint Basil Handmade Soap" data-price="126.00" data-img="images/products/p-15-2-600x600.jpg">
+                        <div class="product-card__img">
+                            <img src="images/products/p-15-2-600x600.jpg" alt="Spearmint Basil Soap">
+                            <div class="product-card__overlay"><button class="btn-add-cart">Add to Cart</button></div>
+                        </div>
+                        <div class="product-card__info">
+                            <h4>Spearmint Basil Handmade Soap</h4>
+                            <div class="stars">★★★★☆</div>
+                            <p class="product-price">$126.00</p>
+                        </div>
+                    </div>
+                    <div class="product-card" data-name="Tea Tree Handmade Soap" data-price="143.80" data-img="images/products/p-17-600x600.jpg">
+                        <div class="product-card__img">
+                            <img src="images/products/p-17-600x600.jpg" alt="Tea Tree Handmade Soap">
+                            <div class="product-card__overlay"><button class="btn-add-cart">Add to Cart</button></div>
+                        </div>
+                        <div class="product-card__info">
+                            <h4>Tea Tree Handmade Soap</h4>
+                            <div class="stars">★★★☆☆</div>
+                            <p class="product-price">$143.80</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="shop-pagination">
+                    <button class="page-btn active">1</button>
+                    <button class="page-btn">2</button>
+                    <button class="page-btn">3</button>
+                    <button class="page-btn"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer__main">
+            <div class="footer__brand">
+                <div class="footer__logo">ecosoap</div>
+                <p>42 Puffin Street, 1345 Puffinville, France</p>
+                <p>Mon – Sat: 8:00am – 4:00pm</p>
+                <p>Sunday: 9:00am – 5:00pm</p>
+            </div>
+            <div class="footer__col"><h4>About Us</h4><ul><li><a href="about.html">About</a></li><li><a href="#">My Account</a></li><li><a href="contact.html">Contact</a></li><li><a href="#">Return Policy</a></li></ul></div>
+            <div class="footer__col"><h4>Service</h4><ul><li><a href="faq.html">FAQs</a></li><li><a href="#">Order Tracking</a></li><li><a href="#">Delivery Information</a></li><li><a href="#">Shipping Options</a></li></ul></div>
+            <div class="footer__col"><h4>Information</h4><ul><li><a href="#">Shipping &amp; Returns</a></li><li><a href="#">Secure Shopping</a></li><li><a href="#">Terms &amp; Conditions</a></li></ul></div>
+            <div class="footer__col"><h4>Need Help?</h4><p class="footer__contact"><i class="fas fa-phone"></i> (1800)-88-66-999</p><p class="footer__contact"><i class="fas fa-envelope"></i> support@example.com</p><div class="footer__social"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-twitter"></i></a></div></div>
+        </div>
+        <div class="footer__bottom">
+            <p>Copyright &copy; 2026 Ecosoap – All Rights Reserved</p>
+            <div class="payment-icons"><span>VISA</span><span>MC</span><span>PayPal</span></div>
+        </div>
+    </div>
+</footer>
+
+<div class="cart-sidebar" id="cartSidebar"><div class="cart-sidebar__header"><h3>Shopping Cart</h3><button id="cartClose"><i class="fas fa-times"></i></button></div><div class="cart-sidebar__body" id="cartBody"><p class="cart-empty">Your cart is currently empty.</p></div><div class="cart-sidebar__footer"><div class="cart-total">Total: <strong id="cartTotal">$0.00</strong></div><a href="#" class="btn btn--green btn--full">Proceed to Checkout</a></div></div>
+<div class="cart-overlay" id="cartOverlay"></div>
+<div class="toast" id="toast"></div>
+<button class="scroll-top" id="scrollTop"><i class="fas fa-chevron-up"></i></button>
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<script src="script.js"></script>
+<script>
+document.getElementById('priceRange').addEventListener('input', function() {
+    document.getElementById('priceVal').textContent = '$' + this.value;
+});
+document.querySelectorAll('.color-swatch').forEach(s => {
+    s.addEventListener('click', () => {
+        document.querySelectorAll('.color-swatch').forEach(x => x.classList.remove('active'));
+        s.classList.add('active');
+    });
+});
+document.querySelectorAll('.view-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        document.querySelectorAll('.view-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+    });
+});
+document.querySelectorAll('.page-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        document.querySelectorAll('.page-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+    });
+});
+</script>
+</body>
+</html>

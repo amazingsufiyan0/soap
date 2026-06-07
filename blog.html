@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog — Ecosoap</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header" id="header">
+    <div class="container">
+        <div class="header__inner">
+            <div class="header__logo"><a href="index.html">ecosoap</a></div>
+            <nav class="header__nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="product.html">Product</a></li>
+                    <li class="active"><a href="blog.html">Blog</a></li>
+                    <li class="has-dropdown">
+                        <a href="about.html">Pages <i class="fas fa-chevron-down nav-arrow"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="faq.html">FAQ</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header__actions">
+                <button class="btn-icon"><i class="fas fa-search"></i></button>
+                <button class="btn-icon"><i class="fas fa-user"></i></button>
+                <button class="btn-icon cart-btn" id="cartToggle"><i class="fas fa-shopping-bag"></i><span class="cart-count">0</span></button>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenu"><i class="fas fa-bars"></i></button>
+        </div>
+    </div>
+</header>
+
+<section class="page-hero">
+    <div class="container">
+        <h1>Our Blog</h1>
+        <div class="breadcrumb">
+            <a href="index.html">Home</a><span>/</span>
+            <span style="color:rgba(255,255,255,0.8)">Blog</span>
+        </div>
+    </div>
+</section>
+
+<section style="background:var(--beige); padding:60px 0;">
+    <div class="container">
+        <div class="blog-layout">
+            <!-- BLOG POSTS -->
+            <div>
+                <div class="blog-full-grid">
+                    <div class="blog-card">
+                        <div class="blog-card__image"><img src="images/blog/blog-01.jpg" alt=""><span class="blog-date">March 31, 2024</span></div>
+                        <div class="blog-card__content">
+                            <span class="blog-author">Ecosoap</span>
+                            <div class="blog-cats"><span class="blog-cat">Liquid Soaps</span><span class="blog-cat">Soap Making</span></div>
+                            <h3><a href="#">Anchoring Fragrances In Cold Process Soap</a></h3>
+                            <p>Learn how to properly anchor fragrances in cold process soap making for long-lasting scents that stay true throughout the cure.</p>
+                            <a href="#" class="read-more">READ MORE <i class="fas fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </div>
+                    <div class="blog-card">
+                        <div class="blog-card__image"><img src="images/blog/blog-02.jpg" alt=""><span class="blog-date">March 31, 2024</span></div>
+                        <div class="blog-card__content">
+                            <span class="blog-author">Ecosoap</span>
+                            <div class="blog-cats"><span class="blog-cat">Lifestyle</span><span class="blog-cat">Soap Making</span></div>
+                            <h3><a href="#">Finding My Favorite Soap Frosting Recipe</a></h3>
+                            <p>Soap frosting is one of the most beautiful decorating techniques. Here's how to create the perfect frosting consistency every time.</p>
+                            <a href="#" class="read-more">READ MORE <i class="fas fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </div>
+                    <div class="blog-card">
+                        <div class="blog-card__image"><img src="images/blog/blog-03.jpg" alt=""><span class="blog-date">March 31, 2024</span></div>
+                        <div class="blog-card__content">
+                            <span class="blog-author">Ecosoap</span>
+                            <div class="blog-cats"><span class="blog-cat">Organic Soaps</span></div>
+                            <h3><a href="#">Beautiful Earth: Making Cold Process Clay Soap</a></h3>
+                            <p>Clay soaps are known for their skin-detoxifying properties. We walk through the full process of making a beautiful cold process clay soap.</p>
+                            <a href="#" class="read-more">READ MORE <i class="fas fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </div>
+                    <div class="blog-card">
+                        <div class="blog-card__image"><img src="images/blog/blog-04.jpg" alt=""><span class="blog-date">March 31, 2024</span></div>
+                        <div class="blog-card__content">
+                            <span class="blog-author">Ecosoap</span>
+                            <div class="blog-cats"><span class="blog-cat">Scrubby Soaps</span></div>
+                            <h3><a href="#">The Total Guide to Soap Frosting!!!</a></h3>
+                            <p>Everything you ever wanted to know about soap frosting — consistency, colorants, piping tips, and curing — in one comprehensive guide.</p>
+                            <a href="#" class="read-more">READ MORE <i class="fas fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </div>
+                    <div class="blog-card">
+                        <div class="blog-card__image"><img src="images/blog/blog-05.jpg" alt=""><span class="blog-date">March 31, 2024</span></div>
+                        <div class="blog-card__content">
+                            <span class="blog-author">Ecosoap</span>
+                            <div class="blog-cats"><span class="blog-cat">Lifestyle</span></div>
+                            <h3><a href="#">Nurture Soap Is Now Nurture Handmade</a></h3>
+                            <p>We've rebranded! Nurture Soap is evolving into Nurture Handmade to better reflect our expanded range of artisan handmade products.</p>
+                            <a href="#" class="read-more">READ MORE <i class="fas fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </div>
+                    <div class="blog-card">
+                        <div class="blog-card__image"><img src="images/blog/blog-06.jpg" alt=""><span class="blog-date">March 31, 2024</span></div>
+                        <div class="blog-card__content">
+                            <span class="blog-author">Ecosoap</span>
+                            <div class="blog-cats"><span class="blog-cat">Liquid Soaps</span></div>
+                            <h3><a href="#">Tea Time! Making 'Tea with The Earl' Handmade Soap</a></h3>
+                            <p>In this tutorial, we blend Earl Grey tea into a gorgeous, scented handmade soap bar that looks as good as it feels on your skin.</p>
+                            <a href="#" class="read-more">READ MORE <i class="fas fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="shop-pagination" style="margin-top:40px;">
+                    <button class="page-btn active">1</button>
+                    <button class="page-btn">2</button>
+                    <button class="page-btn"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+
+            <!-- SIDEBAR -->
+            <aside class="blog-sidebar">
+                <div class="blog-sidebar-widget">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="#">Lifestyle <span style="color:var(--muted);font-size:11px;">(3)</span></a></li>
+                        <li><a href="#">Liquid Soaps <span style="color:var(--muted);font-size:11px;">(2)</span></a></li>
+                        <li><a href="#">Organic Soaps <span style="color:var(--muted);font-size:11px;">(4)</span></a></li>
+                        <li><a href="#">Scrubby Soaps <span style="color:var(--muted);font-size:11px;">(5)</span></a></li>
+                        <li><a href="#">Soap Making <span style="color:var(--muted);font-size:11px;">(6)</span></a></li>
+                    </ul>
+                </div>
+                <div class="blog-sidebar-widget">
+                    <h4>Recent Posts</h4>
+                    <ul>
+                        <li><a href="#">Anchoring Fragrances in Cold Process Soap</a></li>
+                        <li><a href="#">Finding My Favorite Soap Frosting Recipe</a></li>
+                        <li><a href="#">Beautiful Earth: Making Cold Process Clay Soap</a></li>
+                        <li><a href="#">The Total Guide to Soap Frosting!!!</a></li>
+                    </ul>
+                </div>
+                <div class="blog-sidebar-widget">
+                    <h4>Tags</h4>
+                    <div class="tags">
+                        <a href="#" class="tag">Lifestyle</a>
+                        <a href="#" class="tag">Liquid Soaps</a>
+                        <a href="#" class="tag">Organic</a>
+                        <a href="#" class="tag">Scrubby</a>
+                        <a href="#" class="tag">Soap Making</a>
+                        <a href="#" class="tag">Natural</a>
+                        <a href="#" class="tag">Handmade</a>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer__main">
+            <div class="footer__brand"><div class="footer__logo">ecosoap</div><p>42 Puffin Street, 1345 Puffinville, France</p></div>
+            <div class="footer__col"><h4>About Us</h4><ul><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+            <div class="footer__col"><h4>Service</h4><ul><li><a href="faq.html">FAQs</a></li><li><a href="#">Order Tracking</a></li></ul></div>
+            <div class="footer__col"><h4>Information</h4><ul><li><a href="#">Shipping &amp; Returns</a></li><li><a href="#">Terms &amp; Conditions</a></li></ul></div>
+            <div class="footer__col"><h4>Need Help?</h4><p class="footer__contact"><i class="fas fa-phone"></i> (1800)-88-66-999</p><p class="footer__contact"><i class="fas fa-envelope"></i> support@example.com</p><div class="footer__social"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-instagram"></i></a></div></div>
+        </div>
+        <div class="footer__bottom"><p>Copyright &copy; 2026 Ecosoap – All Rights Reserved</p><div class="payment-icons"><span>VISA</span><span>MC</span><span>PayPal</span></div></div>
+    </div>
+</footer>
+
+<div class="cart-sidebar" id="cartSidebar"><div class="cart-sidebar__header"><h3>Shopping Cart</h3><button id="cartClose"><i class="fas fa-times"></i></button></div><div class="cart-sidebar__body" id="cartBody"><p class="cart-empty">Your cart is currently empty.</p></div><div class="cart-sidebar__footer"><div class="cart-total">Total: <strong id="cartTotal">$0.00</strong></div><a href="#" class="btn btn--green btn--full">Checkout</a></div></div>
+<div class="cart-overlay" id="cartOverlay"></div>
+<div class="toast" id="toast"></div>
+<button class="scroll-top" id="scrollTop"><i class="fas fa-chevron-up"></i></button>
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+<script src="script.js"></script>
+</body>
+</html>
