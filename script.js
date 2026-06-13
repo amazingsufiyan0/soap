@@ -225,6 +225,8 @@ if (mobileMenuBtn && headerNav) {
         const isOpen = headerNav.classList.toggle('nav--open');
         mobileMenuBtn.querySelector('i').className = isOpen ? 'fas fa-times' : 'fas fa-bars';
     });
+
+    /* close nav when any link is tapped */
     headerNav.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
             headerNav.classList.remove('nav--open');

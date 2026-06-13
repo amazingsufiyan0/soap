@@ -18,16 +18,10 @@
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="shop.html">Shop</a></li>
-                    <li><a href="product.html">Product</a></li>
                     <li><a href="blog.html">Blog</a></li>
-                    <li class="has-dropdown active">
-                        <a href="about.html">Pages <i class="fas fa-chevron-down nav-arrow"></i></a>
-                        <ul class="dropdown">
-                            <li><a href="about.html">About</a></li>
-                            <li><a href="contact.html" style="color:#fff !important;">Contact</a></li>
-                            <li><a href="faq.html">FAQ</a></li>
-                        </ul>
-                    </li>
+                    <li><a href="about.html">About</a></li>
+                    <li class="active"><a href="contact.html">Contact</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
                 </ul>
             </nav>
             <div class="header__actions">
@@ -47,81 +41,96 @@
     </div>
 </section>
 
-<!-- CONTACT INFO CARDS -->
-<section style="background:var(--beige);">
-    <div class="container">
-        <p class="section-label text-center">REACH US</p>
-        <h2 class="section-title text-center">Get In Touch</h2>
-        <div class="contact-info-cards">
-            <div class="contact-info-card">
-                <div class="contact-info-card__icon"><i class="fas fa-map-marker-alt"></i></div>
-                <h4>Our Location</h4>
-                <p>42 Puffin Street<br>1345 Puffinville, France</p>
-            </div>
-            <div class="contact-info-card">
-                <div class="contact-info-card__icon"><i class="fas fa-phone"></i></div>
-                <h4>Phone Number</h4>
-                <p>(1800)-88-66-999<br>Mon – Sat: 8:00am – 4:00pm</p>
-            </div>
-            <div class="contact-info-card">
-                <div class="contact-info-card__icon"><i class="fas fa-envelope"></i></div>
-                <h4>Email Address</h4>
-                <p>support@verdaura.com<br>hello@verdaura.com</p>
-            </div>
-        </div>
-    </div>
-</section>
+<!-- GET IN TOUCH -->
+<section class="ct-section">
+  <div class="container">
 
-<!-- CONTACT FORM + MAP -->
-<section style="background:var(--cream);">
-    <div class="container">
-        <div class="contact-layout">
-            <div class="contact-form-wrap">
-                <h3>Send Us a Message</h3>
-                <p style="color:var(--muted);margin-bottom:28px;font-size:14px;">Fill out the form below and we'll get back to you within 1–2 business days.</p>
-                <form class="contact-form" id="contactForm">
-                    <div class="contact-form__row">
-                        <div class="contact-form__group">
-                            <label>Your Name *</label>
-                            <input type="text" placeholder="John Smith" required>
-                        </div>
-                        <div class="contact-form__group">
-                            <label>Email Address *</label>
-                            <input type="email" placeholder="john@example.com" required>
-                        </div>
-                    </div>
-                    <div class="contact-form__group">
-                        <label>Subject</label>
-                        <input type="text" placeholder="How can we help you?">
-                    </div>
-                    <div class="contact-form__group">
-                        <label>Message *</label>
-                        <textarea rows="6" placeholder="Write your message here..." required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn--green">Send Message <i class="fas fa-paper-plane" style="margin-left:8px;"></i></button>
-                </form>
-            </div>
-            <div class="contact-map-wrap">
-                <h3>Find Us Here</h3>
-                <p style="color:var(--muted);margin-bottom:28px;font-size:14px;">Visit our workshop and store. We'd love to meet you in person!</p>
-                <div class="contact-map">
-                    <div class="contact-map__placeholder">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <p>42 Puffin Street, Puffinville, France</p>
-                        <small>Map placeholder — embed your Google Maps iframe here</small>
-                    </div>
-                </div>
-                <div class="contact-hours">
-                    <h4>Opening Hours</h4>
-                    <ul>
-                        <li><span>Monday – Friday</span><span>8:00am – 4:00pm</span></li>
-                        <li><span>Saturday</span><span>9:00am – 2:00pm</span></li>
-                        <li><span>Sunday</span><span>Closed</span></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+    <!-- Heading -->
+    <div class="ct-heading">
+      <p class="section-label text-center">REACH US</p>
+      <h2 class="section-title text-center">Get In Touch</h2>
+      <p class="ct-subhead">We'd love to hear from you. Fill in the form or reach us directly — we reply within 1–2 business days.</p>
     </div>
+
+    <!-- Info cards row -->
+    <div class="ct-cards">
+      <div class="ct-card">
+        <div class="ct-card__icon"><i class="fas fa-map-marker-alt"></i></div>
+        <h4>Our Location</h4>
+        <p>42 Puffin Street<br>1345 Puffinville, France</p>
+      </div>
+      <div class="ct-card">
+        <div class="ct-card__icon"><i class="fas fa-phone"></i></div>
+        <h4>Phone Number</h4>
+        <p>(1800)-88-66-999<br>Mon – Sat: 8:00am – 4:00pm</p>
+      </div>
+      <div class="ct-card">
+        <div class="ct-card__icon"><i class="fas fa-envelope"></i></div>
+        <h4>Email Address</h4>
+        <p>support@verdaura.com<br>hello@verdaura.com</p>
+      </div>
+    </div>
+
+    <!-- Form + Sidebar -->
+    <div class="ct-layout">
+
+      <!-- Left: form -->
+      <div class="ct-form-wrap">
+        <h3 class="ct-panel-title">Send Us a Message</h3>
+        <form class="ct-form" id="contactForm">
+          <div class="ct-form__row">
+            <div class="ct-form__group">
+              <label>Your Name <span>*</span></label>
+              <input type="text" placeholder="John Smith" required>
+            </div>
+            <div class="ct-form__group">
+              <label>Email Address <span>*</span></label>
+              <input type="email" placeholder="john@example.com" required>
+            </div>
+          </div>
+          <div class="ct-form__group">
+            <label>Subject</label>
+            <input type="text" placeholder="How can we help you?">
+          </div>
+          <div class="ct-form__group">
+            <label>Message <span>*</span></label>
+            <textarea rows="6" placeholder="Write your message here..." required></textarea>
+          </div>
+          <button type="submit" class="ct-submit">Send Message &nbsp;<i class="fas fa-paper-plane"></i></button>
+        </form>
+      </div>
+
+      <!-- Right: sidebar info -->
+      <div class="ct-sidebar">
+
+        <!-- Map placeholder -->
+        <div class="ct-map">
+          <i class="fas fa-map-marker-alt"></i>
+          <p>42 Puffin Street, Puffinville, France</p>
+          <small>Embed your Google Maps iframe here</small>
+        </div>
+
+        <!-- Hours -->
+        <div class="ct-hours">
+          <h4><i class="fas fa-clock"></i> Opening Hours</h4>
+          <ul>
+            <li><span>Monday – Friday</span><span>8:00am – 4:00pm</span></li>
+            <li><span>Saturday</span><span>9:00am – 2:00pm</span></li>
+            <li><span>Sunday</span><span class="ct-closed">Closed</span></li>
+          </ul>
+        </div>
+
+        <!-- Social -->
+        <div class="ct-social-row">
+          <a href="#" class="ct-social"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="ct-social"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="ct-social"><i class="fab fa-whatsapp"></i></a>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
 </section>
 
 <section class="services">
