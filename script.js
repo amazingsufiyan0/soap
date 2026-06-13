@@ -1,216 +1,103 @@
 /* ==========================================
-   ECOSOAP — script.js
+   VERDAURA — script.js
    ========================================== */
 
 /* =============================================
-   HERO — SOAP BUBBLE BACKGROUND
+   HERO — hero-dot carousel
    ============================================= */
-(function spawnBubbles() {
-    const container = document.getElementById('heroBubbles');
-    if (!container) return;
-
-    const sizes   = [18, 26, 34, 42, 54, 20, 30];
-    const count   = 14;
-
-    for (let i = 0; i < count; i++) {
-        const b = document.createElement('div');
-        b.className = 'hero__bubble';
-        const size    = sizes[Math.floor(Math.random() * sizes.length)];
-        const left    = Math.random() * 100;
-        const delay   = Math.random() * 8;
-        const dur     = 7 + Math.random() * 10;
-        b.style.cssText = `
-            width:${size}px; height:${size}px;
-            left:${left}%;
-            bottom:${-size}px;
-            animation-duration:${dur}s;
-            animation-delay:${delay}s;
-            opacity:${0.3 + Math.random() * 0.4};
-        `;
-        container.appendChild(b);
-    }
+(function initHeroDots() {
+    const dots = document.querySelectorAll('.es-dot');
+    if (!dots.length) return;
+    let current = 0;
+    setInterval(() => {
+        dots[current].classList.remove('active');
+        current = (current + 1) % dots.length;
+        dots[current].classList.add('active');
+    }, 3000);
+    dots.forEach((dot, i) => {
+        dot.addEventListener('click', () => {
+            dots[current].classList.remove('active');
+            current = i;
+            dot.classList.add('active');
+        });
+    });
 })();
 
 /* =============================================
-   HERO — SLIDER
+   PRODUCT DATA
    ============================================= */
-const slides    = document.querySelectorAll('.hero__slide');
-const dots      = document.querySelectorAll('.dot');
-let current     = 0;
-let sliderTimer = null;
+const esProducts = [
+  { id:1, name:'Activated Charcoal Handmade Soap', price:240, oldPrice:320, tag:'charcoal', img:'images/products/p-01-600x600.jpg', badge:'Best Seller' },
+  { id:2, name:'Apple-Enriched Handmade Soap',      price:195, oldPrice:260, tag:'fruit',    img:'images/products/p-02-600x600.jpg', badge:'' },
+  { id:3, name:'Chamomile Handmade Soap',            price:220, oldPrice:290, tag:'floral',   img:'images/products/p-03-600x600.jpg', badge:'New' },
+  { id:4, name:'Coconut Almond Handmade Soap',       price:210, oldPrice:270, tag:'charcoal', img:'images/products/p-04-600x600.jpg', badge:'' },
+  { id:5, name:'Rose Bouquet Handmade Soap',         price:265, oldPrice:340, tag:'floral',   img:'images/products/p-05-600x600.jpg', badge:'Sale' },
+  { id:6, name:'Lavender Dream Soap',                price:235, oldPrice:300, tag:'floral',   img:'images/products/p-06-600x600.jpg', badge:'New' },
+  { id:7, name:'Lemon Citrus Handmade Soap',         price:185, oldPrice:240, tag:'fruit',    img:'images/products/p-07-600x600.jpg', badge:'' },
+  { id:8, name:'Citrus Peppermint Soap',             price:200, oldPrice:260, tag:'charcoal', img:'images/Citrus_Peppermint_Soap1.webp', badge:'New' },
+];
 
-function goToSlide(n) {
-    // Reset — force re-trigger of CSS animations on new active slide
-    slides[current].classList.remove('active');
-    dots[current].classList.remove('active');
+const esNewCollection = [
+  { id:9,  name:'Cotton Fields Soap',         price:245, oldPrice:310, tag:'floral',   img:'images/products/p-09-600x600.jpg' },
+  { id:10, name:'Rose Bouquet Bar Soap',       price:270, oldPrice:350, tag:'floral',   img:'images/products/p-10-600x600.jpg' },
+  { id:11, name:'Mango Handmade Soap',         price:215, oldPrice:280, tag:'fruit',    img:'images/mango-handmade-soap.jpg' },
+  { id:12, name:'Activated Charcoal Bar Soap', price:255, oldPrice:330, tag:'charcoal', img:'images/products/p-12-600x600.jpg' },
+];
 
-    current = (n + slides.length) % slides.length;
-
-    // Brief DOM flush so CSS animations replay cleanly
-    requestAnimationFrame(() => {
-        slides[current].classList.add('active');
-        dots[current].classList.add('active');
+function esRenderProducts(data, containerId) {
+    const grid = document.getElementById(containerId);
+    if (!grid) return;
+    grid.innerHTML = '';
+    data.forEach(p => {
+        const badgeHtml = p.badge
+            ? `<div class="es-badge-wrap"><span class="es-badge-${p.badge === 'Sale' ? 'red' : 'green'}">${p.badge}</span></div>`
+            : '';
+        const oldPriceHtml = p.oldPrice
+            ? `<span class="es-price-old">₹${p.oldPrice}.00</span>`
+            : '';
+        grid.innerHTML += `
+          <div class="es-product-card fade-up" data-tag="${p.tag}" data-name="${p.name}" data-price="${p.price}" data-emoji="🧼">
+            <div class="es-product-img">
+              <img src="${p.img}" alt="${p.name}" class="es-product-img-real" loading="lazy">
+              <div class="es-product-wishlist">♡</div>
+              ${badgeHtml}
+            </div>
+            <div class="es-product-info">
+              <h3>${p.name}</h3>
+              <div class="es-product-price">
+                <span class="es-price-current">₹${p.price}.00</span>
+                ${oldPriceHtml}
+              </div>
+              <button class="es-product-add">Add to Cart</button>
+            </div>
+          </div>
+        `;
     });
+    observeFadeUps();
 }
 
-function startSlider() {
-    sliderTimer = setInterval(() => goToSlide(current + 1), 5500);
+function esFilterProducts(tag, btn) {
+    document.querySelectorAll('.es-tab-btn').forEach(b => b.classList.remove('active'));
+    if (btn) btn.classList.add('active');
+    const filtered = tag === 'all' ? esProducts : esProducts.filter(p => p.tag === tag);
+    esRenderProducts(filtered, 'esProductsGrid');
 }
 
-dots.forEach(dot => {
-    dot.addEventListener('click', () => {
-        clearInterval(sliderTimer);
-        goToSlide(parseInt(dot.dataset.slide));
-        startSlider();
-    });
-});
-
-document.getElementById('heroNext').addEventListener('click', () => {
-    clearInterval(sliderTimer);
-    goToSlide(current + 1);
-    startSlider();
-});
-
-document.getElementById('heroPrev').addEventListener('click', () => {
-    clearInterval(sliderTimer);
-    goToSlide(current - 1);
-    startSlider();
-});
-
-startSlider();
-
 /* =============================================
-   HERO — MOUSE PARALLAX on product image
+   FADE-UP OBSERVER
    ============================================= */
-const heroEl = document.getElementById('hero');
-
-heroEl.addEventListener('mousemove', e => {
-    const rect   = heroEl.getBoundingClientRect();
-    const cx     = rect.width  / 2;
-    const cy     = rect.height / 2;
-    const dx     = (e.clientX - rect.left - cx) / cx;   // -1 … +1
-    const dy     = (e.clientY - rect.top  - cy) / cy;
-
-    const img    = heroEl.querySelector('.hero__slide.active .hero__product-img');
-    const decors = heroEl.querySelectorAll('.hero__slide.active .hero__decor');
-    const circle = heroEl.querySelector('.hero__slide.active .hero__circle');
-
-    if (img)    img.style.transform    = `scale(1) translate(${dx * 10}px, ${dy * 8}px)`;
-    if (circle) circle.style.transform = `translate(${dx * -6}px, ${dy * -6}px)`;
-    decors.forEach((d, i) => {
-        const factor = i === 0 ? 18 : 12;
-        d.style.transform = `translate(${dx * factor}px, ${dy * factor}px)`;
-    });
-});
-
-heroEl.addEventListener('mouseleave', () => {
-    const img    = heroEl.querySelector('.hero__slide.active .hero__product-img');
-    const decors = heroEl.querySelectorAll('.hero__slide.active .hero__decor');
-    const circle = heroEl.querySelector('.hero__slide.active .hero__circle');
-    if (img)    img.style.transform    = '';
-    if (circle) circle.style.transform = '';
-    decors.forEach(d => d.style.transform = '');
-});
-
-/* =============================================
-   HERO — PARALLAX on scroll
-   ============================================= */
-window.addEventListener('scroll', () => {
-    const scrollY = window.scrollY;
-    const img     = heroEl.querySelector('.hero__slide.active .hero__product-img');
-    if (img && scrollY < window.innerHeight) {
-        img.style.transform = `translateY(${scrollY * 0.12}px)`;
-    }
-}, { passive: true });
-
-/* =============================================
-   TABS
-   ============================================= */
-document.querySelectorAll('.tab-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-        const tab     = btn.dataset.tab;
-        const section = btn.closest('.shop-tabs');
-
-        section.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-        section.querySelectorAll('.tab-pane').forEach(p => {
-            p.classList.remove('active');
-            p.style.animation = '';
+function observeFadeUps() {
+    const els = document.querySelectorAll('.fade-up:not(.observed)');
+    const obs = new IntersectionObserver((entries) => {
+        entries.forEach((e, i) => {
+            if (e.isIntersecting) {
+                setTimeout(() => e.target.classList.add('visible'), i * 80);
+                obs.unobserve(e.target);
+            }
         });
-
-        btn.classList.add('active');
-        const pane = section.querySelector(`[data-tab-pane="${tab}"]`);
-        pane.classList.add('active');
-        pane.style.animation = 'tabFadeIn 0.4s ease both';
-    });
-});
-
-/* inject tab fade keyframe */
-const tabStyle = document.createElement('style');
-tabStyle.textContent = `
-@keyframes tabFadeIn {
-    from { opacity:0; transform:translateY(14px); }
-    to   { opacity:1; transform:translateY(0); }
-}`;
-document.head.appendChild(tabStyle);
-
-/* =============================================
-   SCROLL REVEAL — IntersectionObserver
-   ============================================= */
-function observeReveal(selector, extraClass) {
-    document.querySelectorAll(selector).forEach((el, i) => {
-        if (extraClass) el.classList.add(extraClass);
-        // Cascade delay for grid children
-        if (el.parentElement && el.parentElement.children.length > 1) {
-            const siblings = [...el.parentElement.children];
-            const idx      = siblings.indexOf(el);
-            el.style.transitionDelay = `${idx * 0.08}s`;
-        }
-    });
+    }, { threshold: 0.12 });
+    els.forEach(el => { el.classList.add('observed'); obs.observe(el); });
 }
-
-observeReveal('.product-card', 'anim');
-observeReveal('.blog-card',    'anim');
-observeReveal('.testimonial-card', 'anim');
-observeReveal('.category-card', 'anim');
-observeReveal('.service-item',  'anim');
-observeReveal('.promo3-card',   'anim');
-observeReveal('.badge-item',    'anim');
-
-const revealObs = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            revealObs.unobserve(entry.target);
-        }
-    });
-}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-
-document.querySelectorAll('.anim, .anim-left, .anim-right').forEach(el => {
-    revealObs.observe(el);
-});
-
-/* About section: left image, right text */
-const aboutSection = document.querySelector('.about-section__images');
-const aboutContent = document.querySelector('.about-section__content');
-if (aboutSection) aboutSection.classList.add('anim-left');
-if (aboutContent) aboutContent.classList.add('anim-right');
-
-[aboutSection, aboutContent].forEach(el => {
-    if (el) revealObs.observe(el);
-});
-
-/* Extra sale section */
-const saleSplit = document.querySelectorAll('.extra-sale__content, .extra-sale__image');
-saleSplit.forEach((el, i) => {
-    el.classList.add(i === 0 ? 'anim-left' : 'anim-right');
-    revealObs.observe(el);
-});
-
-/* Section titles */
-document.querySelectorAll('.section-title, .section-label').forEach(el => {
-    el.classList.add('anim');
-    revealObs.observe(el);
-});
 
 /* =============================================
    CART
@@ -242,7 +129,7 @@ function renderCart() {
     const total = cart.reduce((s, i) => s + i.price * i.qty, 0);
     const count = cart.reduce((s, i) => s + i.qty, 0);
     cartCountEl.textContent = count;
-    cartTotalEl.textContent = '$' + total.toFixed(2);
+    cartTotalEl.textContent = '₹' + total.toFixed(2);
 
     if (!cart.length) {
         cartBody.innerHTML = '<p class="cart-empty">Your cart is currently empty.</p>';
@@ -250,13 +137,13 @@ function renderCart() {
     }
     cartBody.innerHTML = cart.map(item => `
         <div class="cart-item">
-            <div class="cart-item__img">
-                <img src="${item.img}" alt="${item.name}">
+            <div class="cart-item__img" style="display:flex;align-items:center;justify-content:center;font-size:1.5rem;background:#f5f0e8">
+                ${item.emoji || '🧼'}
             </div>
             <div class="cart-item__info">
                 <p class="cart-item__name">${item.name}</p>
-                <p class="cart-item__price">$${(item.price * item.qty).toFixed(2)}</p>
-                <p class="cart-item__qty">${item.qty} × $${item.price.toFixed(2)}</p>
+                <p class="cart-item__price">₹${(item.price * item.qty).toFixed(2)}</p>
+                <p class="cart-item__qty">${item.qty} × ₹${item.price.toFixed(2)}</p>
             </div>
             <button class="cart-item__remove" data-id="${item.id}">
                 <i class="fas fa-times"></i>
@@ -271,23 +158,25 @@ function renderCart() {
     });
 }
 
-function addToCart(name, price, img) {
-    const id       = name.toLowerCase().replace(/\s+/g,'-').replace(/[^a-z0-9-]/g,'');
-    const existing = cart.find(i => i.id === id);
-    existing ? existing.qty++ : cart.push({ id, name, price, img, qty: 1 });
+function addToCart(name, price, emoji, id) {
+    const itemId    = id || name.toLowerCase().replace(/\s+/g,'-').replace(/[^a-z0-9-]/g,'');
+    const existing  = cart.find(i => i.id === itemId);
+    existing ? existing.qty++ : cart.push({ id: itemId, name, price: parseFloat(price), emoji: emoji || '🧼', qty: 1 });
     renderCart();
     showToast(`"${name}" added to cart`);
     openCart();
 }
 
+/* click delegation — handles both old .btn-add-cart and new .es-product-add */
 document.addEventListener('click', e => {
-    if (!e.target.classList.contains('btn-add-cart')) return;
-    const card  = e.target.closest('.product-card');
+    const btn = e.target.closest('.btn-add-cart, .es-product-add');
+    if (!btn) return;
+    const card  = btn.closest('.product-card, .es-product-card');
     if (!card) return;
-    const name  = card.dataset.name  || card.querySelector('h4').textContent.trim();
+    const name  = card.dataset.name  || card.querySelector('h4,h3')?.textContent.trim();
     const price = parseFloat(card.dataset.price) || 0;
-    const img   = card.dataset.img   || card.querySelector('img').src;
-    addToCart(name, price, img);
+    const emoji = card.dataset.emoji || '🧼';
+    addToCart(name, price, emoji);
 });
 
 /* =============================================
@@ -366,13 +255,10 @@ const cursorDot  = document.getElementById('cursorDot');
 const cursorRing = document.getElementById('cursorRing');
 
 if (cursorDot && cursorRing && window.matchMedia('(pointer:fine)').matches) {
-    let ringX = 0, ringY = 0;
-    let dotX  = 0, dotY  = 0;
-    let raf;
+    let ringX = 0, ringY = 0, dotX = 0, dotY = 0;
 
     document.addEventListener('mousemove', e => {
-        dotX = e.clientX;
-        dotY = e.clientY;
+        dotX = e.clientX; dotY = e.clientY;
         cursorDot.style.left = dotX + 'px';
         cursorDot.style.top  = dotY + 'px';
     });
@@ -382,36 +268,19 @@ if (cursorDot && cursorRing && window.matchMedia('(pointer:fine)').matches) {
         ringY += (dotY - ringY) * 0.12;
         cursorRing.style.left = ringX + 'px';
         cursorRing.style.top  = ringY + 'px';
-        raf = requestAnimationFrame(animateRing);
+        requestAnimationFrame(animateRing);
     }
     animateRing();
 
-    // Grow ring on hoverable elements
-    const hoverEls = 'a, button, .product-card, .category-card, .blog-card, .btn, .tab-btn';
+    const hoverEls = 'a, button, .es-product-card, .product-card, .blog-card, .es-collection-item, .es-tab-btn';
     document.querySelectorAll(hoverEls).forEach(el => {
         el.addEventListener('mouseenter', () => cursorRing.classList.add('hovering'));
         el.addEventListener('mouseleave', () => cursorRing.classList.remove('hovering'));
     });
 } else {
-    // Hide on touch devices
     if (cursorDot)  cursorDot.style.display  = 'none';
     if (cursorRing) cursorRing.style.display = 'none';
 }
-
-/* =============================================
-   PRODUCT CARD — tilt effect on hover
-   ============================================= */
-document.querySelectorAll('.product-card').forEach(card => {
-    card.addEventListener('mousemove', e => {
-        const rect  = card.getBoundingClientRect();
-        const x     = (e.clientX - rect.left) / rect.width  - 0.5;  // -0.5 … 0.5
-        const y     = (e.clientY - rect.top)  / rect.height - 0.5;
-        card.style.transform = `perspective(600px) rotateY(${x * 8}deg) rotateX(${-y * 8}deg) translateY(-4px)`;
-    });
-    card.addEventListener('mouseleave', () => {
-        card.style.transform = '';
-    });
-});
 
 /* =============================================
    SMOOTH ANCHOR SCROLL
@@ -421,7 +290,15 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
         const target = document.querySelector(a.getAttribute('href'));
         if (!target) return;
         e.preventDefault();
-        const offset = 70;
-        window.scrollTo({ top: target.offsetTop - offset, behavior: 'smooth' });
+        window.scrollTo({ top: target.offsetTop - 70, behavior: 'smooth' });
     });
+});
+
+/* =============================================
+   INIT
+   ============================================= */
+document.addEventListener('DOMContentLoaded', () => {
+    esRenderProducts(esProducts, 'esProductsGrid');
+    esRenderProducts(esNewCollection, 'esNewCollectionGrid');
+    observeFadeUps();
 });
